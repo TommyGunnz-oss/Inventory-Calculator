@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Adjustment Tool</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Inventory Adjustment Tool</h1>
+        <form id="lotForm">
+            <label for="numberOfLots">Enter the number of lot codes:</label>
+            <input type="number" id="numberOfLots" name="numberOfLots" min="1" required>
+            <button type="submit">Generate Lots</button>
+        </form>
+        <div id="lotData" class="hidden">
+            <h2>Lot Data</h2>
+            <div id="lotInputs"></div>
+            <button id="calculateButton">Calculate Adjustment and Lot Changes</button>
+        </div>
+        <div id="results" class="hidden">
+            <h2>Results</h2>
+            <div class="result-card">
+                <h3>Total Adjustment</h3>
+                <p id="totalAdjustment"></p>
+            </div>
+            <div class="result-card hidden" id="lotChangesSection">
+                <h3>Lot Changes</h3>
+                <table id="adjustedLotsTable">
+                    <thead>
+                        <tr>
+                            <th>LOT CODE</th>
+                            <th>ADJUSTMENT</th>
+                        </tr>
+                    </thead>
+                    <tbody id="adjustedLotsBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
